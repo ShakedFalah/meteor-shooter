@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,8 +7,8 @@ public class PlayerScript : MonoBehaviour
 {
     private InputProvider _inputProvider;
     [SerializeField] private Rigidbody2D _rigidbody;
+    [SerializeField] private GameObject _bullet;
     
-
     [SerializeField] private float _maxSpeed = 5;
     [SerializeField] private float _accelerationSpeed = 500;
     [SerializeField] private float _deccelerationSpeed = 1;
@@ -41,6 +42,6 @@ public class PlayerScript : MonoBehaviour
 
     void shoot(InputAction.CallbackContext context)
     {
-
+        Instantiate(_bullet,transform.position, transform.rotation);
     }
 }

@@ -184,6 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 446693143}
+  _bullet: {fileID: 6310686956810507202, guid: 06b070061f6d5f342b0a82aefaf25a05, type: 3}
   _maxSpeed: 5
   _accelerationSpeed: 500
   _deccelerationSpeed: 1
