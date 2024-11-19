@@ -7,21 +7,21 @@
             "actions": [
                 {
                     "name": "Move",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "c4057e30-1c56-4cee-8f2f-f4b49d4e978d",
                     "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Turn",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "e3806e68-4877-4769-954b-76c424cdf1d1",
                     "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Shoot",
@@ -81,7 +81,7 @@
                 {
                     "name": "negative",
                     "id": "f7ab7845-74f9-46fa-99a2-6318d0bf5bea",
-                    "path": "<Keyboard>/a",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -92,7 +92,7 @@
                 {
                     "name": "positive",
                     "id": "c3713180-ec58-428a-9f42-32781265e5ea",
-                    "path": "<Keyboard>/d",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

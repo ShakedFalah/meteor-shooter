@@ -5,11 +5,13 @@ using UnityEngine.InputSystem;
 public class PlayerScript : MonoBehaviour
 {
     private InputProvider _inputProvider;
+    [SerializeField] private Rigidbody2D _rigidbody;
+    
 
-    private float _speed = 0;
-    private float _maxSpeed = 100;
-    private float _accelerationSpeed = 10;
-    private float _deccelerationSpeed = 10;
+    [SerializeField] private float _maxSpeed = 5;
+    [SerializeField] private float _accelerationSpeed = 500;
+    [SerializeField] private float _deccelerationSpeed = 1;
+    [SerializeField] private float _turningSpeed = 200;
     private void OnEnable()
     {
         _inputProvider = new InputProvider();
@@ -26,13 +28,15 @@ public class PlayerScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        _rigidbody.linearDamping = _deccelerationSpeed;
     }
 
     // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        
+        _rigidbody.AddRelativeForceY(_inputProvider.MovementInput() * _accelerationSpeed * Time.fixedDeltaTime, ForceMode2D.Force);
+        _rigidbody.linearVelocity = Vector2.ClampMagnitude(_rigidbody.linearVelocity, _maxSpeed);
+        transform.Rotate(new Vector3(0,0,_inputProvider.TurningInput() * _turningSpeed * Time.fixedDeltaTime));
     }
 
     void shoot(InputAction.CallbackContext context)
